@@ -86,3 +86,9 @@ sysinfo.txt
 
 # Example: If you have a specific test build folder
 # /TestBuilds/
+
+# Generated build artifacts and debug information
+*.apk
+.utmp/
+Carrot Clicker_BurstDebugInformation_DoNotShip/ 
+

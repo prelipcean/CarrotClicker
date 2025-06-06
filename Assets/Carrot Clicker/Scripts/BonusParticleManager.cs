@@ -15,18 +15,6 @@ public class BonusParticleManager : MonoBehaviour
         InputManager.onCarrotClickPosition -= OnCarrotClicked; // Unsubscribe from the carrot click action to prevent memory leaks
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCarrotClicked(Vector2 position)
     {
         if (bonusParticlePrefab == null)
