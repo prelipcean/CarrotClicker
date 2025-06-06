@@ -3,7 +3,7 @@
     "m_SelectedProcess": {
         "deviceId": "45311FDAS002Z8",
         "name": "com.GamesReborn.CarrotClicker",
-        "processId": 14271,
+        "processId": 18700,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,12 @@
             "deviceId": "45311FDAS002Z8",
             "name": "com.GamesReborn.CarrotClicker",
             "processId": 14271,
+            "exited": false
+        },
+        {
+            "deviceId": "45311FDAS002Z8",
+            "name": "com.GamesReborn.CarrotClicker",
+            "processId": 18700,
             "exited": false
         }
     ],

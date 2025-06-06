@@ -3,7 +3,7 @@ using TMPro;
 
 public class CarrotManager : MonoBehaviour
 {
-    [Header (" Elements ")]
+    [Header(" Elements ")]
     [SerializeField] private TextMeshProUGUI carrotCountText; // UI element to display the carrot count
     [Header(" Data ")]
     ulong carrotCount = 0; // Number of carrots collected
@@ -13,29 +13,23 @@ public class CarrotManager : MonoBehaviour
     void Awake()
     {
         LoadData(); // Load the carrot count from PlayerPrefs when the script is initialized
-        InputManager.onCarrotClick  += HandleCarrotClick; // Subscribe to the carrot click action
-        Carrot.onFrenzyModeStarted  += FrenzyModeStartedCallback; // Subscribe to the frenzy mode started action
-        Carrot.onFrenzyModeEnded    += FrenzyModeEndedCallback; // Subscribe to the frenzy mode ended action
+        InputManager.onCarrotClick += HandleCarrotClick; // Subscribe to the carrot click action
+        Carrot.onFrenzyModeStarted += FrenzyModeStartedCallback; // Subscribe to the frenzy mode started action
+        Carrot.onFrenzyModeEnded += FrenzyModeEndedCallback; // Subscribe to the frenzy mode ended action
     }
 
     void OnDestroy()
     {
         // Unsubscribe from the carrot click action to prevent memory leaks
-        InputManager.onCarrotClick  -= HandleCarrotClick;
-        Carrot.onFrenzyModeStarted  -= FrenzyModeStartedCallback;
-        Carrot.onFrenzyModeEnded    -= FrenzyModeEndedCallback;
+        InputManager.onCarrotClick -= HandleCarrotClick;
+        Carrot.onFrenzyModeStarted -= FrenzyModeStartedCallback;
+        Carrot.onFrenzyModeEnded -= FrenzyModeEndedCallback;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Application.targetFrameRate = 60; // Set the target frame rate to 60 FPS
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnApplicationQuit()
@@ -46,9 +40,9 @@ public class CarrotManager : MonoBehaviour
     private void HandleCarrotClick()
     {
         carrotCount += carrotIncrement; // Increment the carrot count when a carrot is clicked
-
+        //carrotCount = System.Math.Max((ulong)0, carrotCount); not needed since ulong cannot be negative
         UpdateCarrotsText(); // Update the UI text to reflect the new carrot count
-        //SaveData(); // Save the updated carrot count to PlayerPrefs
+        //SaveData(); // Save the updated carrot count to PlayerPrefs ToDo periodic data save
         DebugLogger.Log("Carrot clicked! Total carrots: " + carrotCount); // Log the current carrot count
     }
 
@@ -95,6 +89,12 @@ public class CarrotManager : MonoBehaviour
         //carrotCount = PlayerPrefs.GetInt("CarrotCount", 0);
         string saved = PlayerPrefs.GetString("CarrotCount", "0");
         ulong.TryParse(saved, out carrotCount);
+        //carrotCount = System.Math.Max((ulong)0, carrotCount); not needed since ulong cannot be negative
         UpdateCarrotsText();
+    }
+    
+    public int GetCurrentMultiplier()
+    {
+        return (int)carrotIncrement; // Return the current carrot increment as an int
     }
 }

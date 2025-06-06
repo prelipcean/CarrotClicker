@@ -111,7 +111,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 134217727
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -273,6 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2311539012552135281}
   - component: {fileID: 876669745505530416}
+  - component: {fileID: -7806314174136467278}
   m_Layer: 0
   m_Name: Bonus Particle
   m_TagString: Untagged
@@ -319,3 +320,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7806314174136467278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255007623658147245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab8e9c78f454afa0b7b540178b92054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusText: {fileID: 4451259991511565875}

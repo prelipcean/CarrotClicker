@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusParticlePrefab: {fileID: 7255007623658147245, guid: 05139e280d50051b58c86a556a32fe3b, type: 3}
+  carrotManager: {fileID: 1961072502}
 --- !u!1 &809013616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotCountText: {fileID: 224281304}
-  carrotCount: 0
-  frenzyModeMultiplier: 15
 --- !u!4 &1961072503
 Transform:
   m_ObjectHideFlags: 0
